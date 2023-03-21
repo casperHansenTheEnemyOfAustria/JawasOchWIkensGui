@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="addressbook.AddressBookController">
+   <children>
+      <MenuBar fx:id="menuBar" maxHeight="30.0" maxWidth="600.0" minHeight="30.0" minWidth="600.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="%fileMenu.text">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="New File">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/New16.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Delete File">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/Delete16.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApplicationActionPerformed" text="%exitApplicationMenuItem.text" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="%helpMenu.text">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openAboutActionPerformed" text="%aboutMenuItem.text" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar layoutX="-1.0" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <items>
+          <Button fx:id="newButton" mnemonicParsing="false" onAction="#newContactActionPerformed">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/New24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/Delete24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.28850446428571436" layoutY="73.0" prefHeight="327.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.66666666666669">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="325.0" prefWidth="179.0">
+               <children>
+                  <ListView fx:id="contactsListView" layoutX="-12.0" prefHeight="325.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="31.0" prefWidth="75.0" text="First Name:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="73.0" prefWidth="75.0" text="Last Name:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="113.0" prefWidth="75.0" text="Phone:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="153.0" prefWidth="75.0" text="Email:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="188.0" prefWidth="75.0" text="Address:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="230.0" prefWidth="75.0" text="Post Code:" AnchorPane.leftAnchor="0.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="269.0" prefWidth="75.0" text="City:" AnchorPane.leftAnchor="0.0" />
+                  <TextField fx:id="fnTextfield" layoutX="90.0" layoutY="27.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="lnTextfield" layoutX="90.0" layoutY="69.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="pTextfield" layoutX="90.0" layoutY="109.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="eTextfield" layoutX="90.0" layoutY="149.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="aTextfield" layoutX="90.0" layoutY="184.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="pcTextfield" layoutX="90.0" layoutY="226.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+                  <TextField fx:id="cTextfield" layoutX="90.0" layoutY="265.0" minWidth="200.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="30.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
