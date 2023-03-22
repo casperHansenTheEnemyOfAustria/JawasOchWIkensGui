@@ -74,6 +74,11 @@ public class AddressBookController implements Initializable {
     }
 
     @FXML
+    protected void deleteContactActionPerformed (ActionEvent event){
+        presenter.removeCurrentContact();
+    }
+
+    @FXML
     protected void textFieldActionPerformed(ActionEvent event){
         presenter.textFieldActionPerformed(event);
     }
