@@ -2,20 +2,23 @@
 package recipesearch;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.List;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
-
-import javax.swing.text.html.ImageView;
 
 
 public class RecipeSearchController implements Initializable {
@@ -43,6 +46,10 @@ public class RecipeSearchController implements Initializable {
     private ImageView detailedImage;
     @FXML
     private Label detailedLabel;
+    @FXML
+    private AnchorPane searchPane;
+
+    private Map<String, RecipeListitem> recipeListItemMap = new HashMap<String, RecipeListitem>();
 
 
 
@@ -61,6 +68,19 @@ public class RecipeSearchController implements Initializable {
 
 
     }
+    private void populateRecipeDetailView(Recipe recipe){
+        detailedLabel.setText(recipe.getName());
+        detailedImage.setImage(recipe.getFXImage());
+    }
+    @FXML
+    public void closeRecipeView(){
+        searchPane.toBack();
+    }
+    public void openRecipeView(Recipe recipe){
+        populateRecipeDetailView(recipe);
+        searchPane.toFront();
+    }
+
 
     private void sliderInit() {
         slideyFucker.valueProperty().addListener(new ChangeListener<Number>() {
