@@ -59,6 +59,7 @@ public class RecipeSearchController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        initRecipeHash();
         updateRecipeList();
         initMainCombobox();
         initCuisineCombobox();
@@ -67,7 +68,17 @@ public class RecipeSearchController implements Initializable {
         sliderInit();
 
 
+
     }
+
+    private void initRecipeHash() {
+        System.out.println("get his");
+        for (Recipe recipe : RecipeBackendController.getRecipes()) {
+            RecipeListitem recipeListItem = new RecipeListitem(recipe, this);
+            recipeListItemMap.put(recipe.getName(), recipeListItem);
+        }
+    }
+
     private void populateRecipeDetailView(Recipe recipe){
         detailedLabel.setText(recipe.getName());
         detailedImage.setImage(recipe.getFXImage());
@@ -192,8 +203,8 @@ public class RecipeSearchController implements Initializable {
         expandableRecipeList.getChildren().clear();
         List<Recipe> recipes = RecipeBackendController.getRecipes();
         for(int i =0; i < recipes.size(); i++ ){
-            RecipeListitem listitem = new RecipeListitem(recipes.get(i), this );
-            System.out.print("item");
+//            System.out.println(recipeListItemMap);
+            RecipeListitem listitem = recipeListItemMap.get(recipes.get(i).getName());
             expandableRecipeList.getChildren().add(listitem);
         }
 
