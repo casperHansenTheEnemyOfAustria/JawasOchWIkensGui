@@ -28,12 +28,12 @@
                         <RadioButton fx:id="medium" layoutX="106.0" layoutY="330.0" mnemonicParsing="false" text="Mellan" />
                         <RadioButton fx:id="hard" layoutX="106.0" layoutY="348.0" mnemonicParsing="false" text="Svår" />
                         <Spinner fx:id="maxPrice" layoutX="94.0" layoutY="386.0" prefHeight="25.0" prefWidth="96.0" AnchorPane.rightAnchor="74.0" />
-                        <Slider layoutX="111.0" layoutY="436.0" AnchorPane.rightAnchor="30.0" />
+                        <Slider fx:id="slideyFucker" layoutX="111.0" layoutY="436.0" max="150.0" snapToTicks="true" AnchorPane.rightAnchor="30.0" />
                         <Text layoutX="35.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kök:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="14.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Svårighetsgrad:" textAlignment="RIGHT" wrappingWidth="86.80340576171875" />
                         <Text layoutX="35.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxpris:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="35.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxtid:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
-                        <Text layoutX="182.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text fx:id="slideyFuckerLabel" layoutX="182.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="214.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kr" wrappingWidth="64.13671875" />
                      </children>
                   </AnchorPane>

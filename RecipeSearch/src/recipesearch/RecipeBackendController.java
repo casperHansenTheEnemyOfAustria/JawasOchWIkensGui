@@ -47,8 +47,8 @@ public class RecipeBackendController {
         }
     }
     public static void setMaxTime(int maxTime){
-        List<Integer> check = Arrays.asList(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150);
-        if(check.contains(maxTime)) {
+
+        if(maxTime % 10 == 0 && maxTime <= 150) {
             RecipeBackendController.maxTime = maxTime;
         }
     }

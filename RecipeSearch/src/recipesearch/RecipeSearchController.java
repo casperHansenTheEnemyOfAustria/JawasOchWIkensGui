@@ -11,8 +11,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
+
+import javax.swing.text.html.ImageView;
 
 
 public class RecipeSearchController implements Initializable {
@@ -32,6 +35,16 @@ public class RecipeSearchController implements Initializable {
     private RadioButton all;
     @FXML
     private Spinner maxPrice;
+    @FXML
+    private Slider slideyFucker;
+    @FXML
+    private Text slideyFuckerLabel;
+    @FXML
+    private ImageView detailedImage;
+    @FXML
+    private Label detailedLabel;
+
+
 
 
 
@@ -44,11 +57,36 @@ public class RecipeSearchController implements Initializable {
         initCuisineCombobox();
         initToggles();
         initSpinner();
+        sliderInit();
+
 
     }
 
+    private void sliderInit() {
+        slideyFucker.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if(newValue.intValue() % 10 == 0) {
+
+
+                    if (newValue != null && !newValue.equals(oldValue) && !slideyFucker.isValueChanging()) {
+//                        System.out.println("hello2");
+                        RecipeBackendController.setMaxTime((Integer) newValue.intValue());
+                        updateRecipeList();
+                    }
+                    newValue = newValue.intValue();
+                    slideyFuckerLabel.setText(newValue.toString()+ " Minuter");
+                    System.out.println(newValue);
+                }
+
+            }
+
+
+        });
+    }
+
     private void initSpinner() {
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 150, 0, 10);
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 1000000, 0, 1);
         maxPrice.setValueFactory(valueFactory);
         maxPrice.valueProperty().addListener(new ChangeListener<Integer>() {
             @Override
