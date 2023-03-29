@@ -2,6 +2,7 @@ package recipesearch;
 
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -44,5 +45,8 @@ public class RecipeListitem extends AnchorPane {
 
         this.recipe = recipe;
         this.parentController = recipeSearchController;
+        recipeImage.setImage(recipe.getFXImage());
+        recipeTextHeadline.setText(recipe.getName());
+
     }
 }

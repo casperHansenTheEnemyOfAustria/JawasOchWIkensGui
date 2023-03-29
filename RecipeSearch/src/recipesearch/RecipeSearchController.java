@@ -19,13 +19,14 @@ public class RecipeSearchController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        updateRecipeList();
     }
     private void updateRecipeList(){
         expandableRecipeList.getChildren().clear();
         List<Recipe> recipes = RecipeBackendController.getRecipes();
-        for(int i =0; i > recipes.size(); i++ ){
+        for(int i =0; i < recipes.size(); i++ ){
             RecipeListitem listitem = new RecipeListitem(recipes.get(i), this );
+            System.out.print("item");
             expandableRecipeList.getChildren().add(listitem);
         }
     }

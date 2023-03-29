@@ -15,6 +15,7 @@ public class RecipeBackendController {
     private static int maxTime = 0;
 
     public static List<Recipe> getRecipes(){
+        System.out.println("hellos");
         return db.search(new SearchFilter(difficulty, maxTime, cuisine, maxPrice, mainIngredient));
     }
     public void setCuisine(String cuisine){
