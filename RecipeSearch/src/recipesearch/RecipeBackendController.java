@@ -8,13 +8,13 @@ import java.util.Arrays;
 
 public class RecipeBackendController {
     private static RecipeDatabase db = RecipeDatabase.getSharedInstance();
-    private String cuisine = null;
-    private String mainIngredient = null;
-    private String difficulty = null;
-    private int maxPrice = 0;
-    private int maxTime = 0;
+    private static String cuisine = null;
+    private static String mainIngredient = null;
+    private static String difficulty = null;
+    private static int maxPrice = 0;
+    private static int maxTime = 0;
 
-    public List<Recipe> getRecipes(){
+    public static List<Recipe> getRecipes(){
         return db.search(new SearchFilter(difficulty, maxTime, cuisine, maxPrice, mainIngredient));
     }
     public void setCuisine(String cuisine){

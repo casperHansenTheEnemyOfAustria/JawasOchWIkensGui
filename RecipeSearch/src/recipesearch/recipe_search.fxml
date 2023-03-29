@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
 
+<AnchorPane maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+   <children>
+      <StackPane prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <AnchorPane fx:id="searchPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #09babe;" />
+            <SplitPane fx:id="recipeDetailPane" dividerPositions="0.35" prefHeight="356.0" prefWidth="505.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ComboBox layoutX="106.0" layoutY="215.0" prefHeight="25.0" prefWidth="140.0" />
+                        <Text layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Huvudingrediens:" textAlignment="RIGHT" wrappingWidth="96.00000000000006" />
+                        <ComboBox layoutX="106.0" layoutY="249.0" prefHeight="25.0" prefWidth="140.0" />
+                        <RadioButton layoutX="106.0" layoutY="294.0" mnemonicParsing="false" text="Alla" />
+                        <RadioButton layoutX="106.0" layoutY="312.0" mnemonicParsing="false" text="Lätt" />
+                        <RadioButton layoutX="106.0" layoutY="330.0" mnemonicParsing="false" text="Mellan" />
+                        <RadioButton layoutX="106.0" layoutY="348.0" mnemonicParsing="false" text="Svår" />
+                        <Spinner layoutX="94.0" layoutY="386.0" prefHeight="25.0" prefWidth="96.0" AnchorPane.rightAnchor="74.0" />
+                        <Slider layoutX="111.0" layoutY="436.0" AnchorPane.rightAnchor="30.0" />
+                        <Text layoutX="35.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kök:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text layoutX="14.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Svårighetsgrad:" textAlignment="RIGHT" wrappingWidth="86.80340576171875" />
+                        <Text layoutX="35.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxpris:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text layoutX="35.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxtid:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text layoutX="182.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text layoutX="214.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kr" wrappingWidth="64.13671875" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ScrollPane prefHeight="500.0" prefWidth="515.0">
+                           <content>
+                              <FlowPane fx:id="expandableRecipeList" prefHeight="497.0" prefWidth="515.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </StackPane>
+   </children>
 </AnchorPane>
