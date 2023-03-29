@@ -18,38 +18,38 @@ public class RecipeBackendController {
         System.out.println("hellos");
         return db.search(new SearchFilter(difficulty, maxTime, cuisine, maxPrice, mainIngredient));
     }
-    public void setCuisine(String cuisine){
+    public static void setCuisine(String cuisine){
         List<String> check = Arrays.asList("Sverige", "Grekland","Indien","Asien", "Afrika", "Frankrike");
         if(check.contains(cuisine)) {
-            this.cuisine = cuisine;
+            RecipeBackendController.cuisine = cuisine;
         }
     }
-    public void setMainIngredient(String mainIngredient){
+    public static void setMainIngredient(String mainIngredient){
         List<String> check = Arrays.asList("Kött",
                 "Fisk",
                 "Kyckling",
                 "Vegetarisk");
         if(check.contains(mainIngredient)) {
-            this.mainIngredient = mainIngredient;
+            RecipeBackendController.mainIngredient = mainIngredient;
         }
     }
-    public void setDifficulty(String difficulty){
+    public static void setDifficulty(String difficulty){
         List<String> check = Arrays.asList("Lätt",
                 "Mellan",
                 "Svår");
-        if(check.contains(mainIngredient)) {
-            this.difficulty = difficulty;
+        if(difficulty.equals("Lätt") || difficulty.equals("Mellan") || difficulty.equals("Svår")) {
+            RecipeBackendController.difficulty = difficulty;
         }
     }
-    public void setMaxPrice(int maxPrice){
+    public static void setMaxPrice(int maxPrice){
         if(maxPrice > 0) {
-            this.maxPrice = maxPrice;
+            RecipeBackendController.maxPrice = maxPrice;
         }
     }
-    public void setMaxTime(int maxTime){
-        List<Integer> check = Arrays.asList(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150);
-        if(check.contains(maxTime)) {
-            this.maxTime = maxTime;
+    public static void setMaxTime(int maxTime){
+
+        if(maxTime % 10 == 0 && maxTime <= 150) {
+            RecipeBackendController.maxTime = maxTime;
         }
     }
 }
