@@ -100,7 +100,9 @@ public class RecipeSearchController implements Initializable {
                 if(newValue.intValue() % 10 == 0) {
 
 
-                    if (newValue != null && !newValue.equals(oldValue) ) {
+                    if (newValue != null && !newValue.equals(oldValue)
+                            //&& !slideyFucker.isValueChanging()
+                    ) {
 //                        System.out.println("hello2");
                         RecipeBackendController.setMaxTime((Integer) newValue.intValue());
                         updateRecipeList();

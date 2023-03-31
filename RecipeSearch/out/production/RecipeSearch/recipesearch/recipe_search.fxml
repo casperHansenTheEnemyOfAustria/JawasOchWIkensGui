@@ -46,7 +46,7 @@
                         <Text layoutX="14.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Svårighetsgrad:" textAlignment="RIGHT" wrappingWidth="86.80340576171875" />
                         <Text layoutX="35.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxpris:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="35.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maxtid:" textAlignment="RIGHT" wrappingWidth="64.13671875" />
-                        <Text fx:id="slideyFuckerLabel" layoutX="182.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text fx:id="slideyFuckerLabel" layoutX="182.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="214.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kr" wrappingWidth="64.13671875" />
                      </children>
                   </AnchorPane>
