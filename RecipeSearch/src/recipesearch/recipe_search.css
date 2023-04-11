@@ -1,2 +1,28 @@
 
 
+.text-normal{
+   -fx-font-size: 13px;
+   -fx-font-family: "Comic Sans MS";
+}
+
+.text-smaller{
+   -fx-font-size: 11px;
+   -fx-font-family: "Comic Sans MS";
+}
+
+.text-larger{
+   -fx-font-size: 15px;
+   -fx-font-family: "Comic Sans MS";
+}
+
+#logo{
+  -fx-font-size: 48px;
+  -fx-font-family: "Impact";
+}
+
+#logo-twirl{
+    -fx-font-size: 64px;
+    -fx-font-family: "Papyrus";
+    -fx-text-fill: #FFAC33;
+    -fx-rotate: -20;
+}
