@@ -11,4 +11,3 @@
       <Text fx:id="recipeTextHeadline" layoutX="175.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    </children>
 </fx:root>
-2
