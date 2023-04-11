@@ -34,32 +34,58 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <Text layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Huvudingrediens:" textAlignment="RIGHT" wrappingWidth="111.19998168945318" AnchorPane.rightAnchor="160.0" />
-                        <Spinner fx:id="maxPrice" layoutX="127.0" layoutY="385.0" prefHeight="25.0" prefWidth="96.0" styleClass="text-smaller" AnchorPane.rightAnchor="53.0" />
                         <ComboBox fx:id="mainIngredient" layoutX="127.0" layoutY="215.0" prefHeight="25.0" prefWidth="140.0" styleClass="text-smaller" />
                         <ComboBox fx:id="couisine" layoutX="127.0" layoutY="249.0" prefHeight="25.0" prefWidth="140.0" styleClass="text-smaller" />
                         <RadioButton fx:id="all" layoutX="127.0" layoutY="294.0" mnemonicParsing="false" styleClass="text-smaller" text="Alla" />
-                        <RadioButton fx:id="easy" layoutX="127.0" layoutY="312.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt" />
-                        <RadioButton fx:id="medium" layoutX="127.0" layoutY="330.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan" />
-                        <RadioButton fx:id="hard" layoutX="127.0" layoutY="348.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår" />
+                        <RadioButton fx:id="easy" layoutX="127.0" layoutY="314.0" mnemonicParsing="false" styleClass="text-smaller" text="Lätt">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_easy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="medium" layoutX="127.0" layoutY="335.0" mnemonicParsing="false" styleClass="text-smaller" text="Mellan">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_medium.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <RadioButton fx:id="hard" layoutX="127.0" layoutY="356.0" mnemonicParsing="false" styleClass="text-smaller" text="Svår">
+                           <graphic>
+                              <ImageView fitHeight="18.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/icon_difficulty_hard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></RadioButton>
+                        <Text layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Huvudingrediens:" textAlignment="RIGHT" wrappingWidth="111.19998168945318" AnchorPane.rightAnchor="160.0" />
+                        <Spinner fx:id="maxPrice" layoutX="127.0" layoutY="385.0" prefHeight="25.0" prefWidth="96.0" styleClass="text-smaller" AnchorPane.rightAnchor="53.0" />
+                        <Slider fx:id="slideyFucker" layoutX="127.0" layoutY="436.0" max="150.0" showTickMarks="true" snapToTicks="true" AnchorPane.rightAnchor="9.0" />
                         <Text layoutX="46.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Kök:" textAlignment="RIGHT" wrappingWidth="64.13671875" AnchorPane.rightAnchor="160.0" />
                         <Text layoutX="12.799890136718474" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Svårighetsgrad:" textAlignment="RIGHT" wrappingWidth="103.19998168945307" AnchorPane.rightAnchor="160.00012817382844" />
                         <Text layoutX="46.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Maxpris:" textAlignment="RIGHT" wrappingWidth="64.13671875" AnchorPane.rightAnchor="160.0" />
                         <Text layoutX="46.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Maxtid:" textAlignment="RIGHT" wrappingWidth="64.13671875" AnchorPane.rightAnchor="160.0" />
-                        <Text fx:id="slideyFuckerLabel" layoutX="203.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-smaller" text="0 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
+                        <Text fx:id="slideyFuckerLabel" layoutX="203.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-smaller" text="00 minuter" textAlignment="RIGHT" wrappingWidth="64.13671875" />
                         <Text layoutX="235.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-smaller" text="Kr" wrappingWidth="64.13671875" />
-                        <Slider fx:id="slideyFucker" layoutX="127.0" layoutY="436.0" max="150.0" snapToTicks="true" AnchorPane.rightAnchor="9.0" />
                         <AnchorPane layoutX="-1.0" prefHeight="142.0" prefWidth="282.0">
                            <children>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <Label id="logo" layoutX="84.0" layoutY="9.0" text="Recept" />
+                              <Label id="logo-twirl" layoutX="135.0" layoutY="-5.0" text="Sök" />
+                              <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="14.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@resources/logo.png" />
                                  </image>
                               </ImageView>
-                              <Label text="Recept" />
-                              <Label text="Sök" />
                            </children>
                         </AnchorPane>
+                        <ImageView fitHeight="26.0" fitWidth="15.0" layoutX="196.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/icon_time.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

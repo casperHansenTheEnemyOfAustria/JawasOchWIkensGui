@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.List;
 
+import javafx.application.Platform;
+import javafx.util.Callback;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
@@ -14,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
@@ -66,6 +69,9 @@ public class RecipeSearchController implements Initializable {
         initToggles();
         initSpinner();
         sliderInit();
+        populateMainIngredientComboBox();
+        populateCuisineComboBox();
+        Platform.runLater(()->mainIngredient.requestFocus());
 
 
 
@@ -211,6 +217,115 @@ public class RecipeSearchController implements Initializable {
         }
 
 
+    }
+
+    private void populateMainIngredientComboBox() {
+        Callback<ListView<String>, ListCell<String>> cellFactory = new Callback<ListView<String>, ListCell<String>>() {
+
+            @Override
+            public ListCell<String> call(ListView<String> p) {
+
+                return new ListCell<String>() {
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        setText(item);
+
+                        if (item == null || empty) {
+                            setGraphic(null);
+                        } else {
+                            Image icon = null;
+                            String iconPath;
+                            try {
+                                switch (item) {
+
+                                    case "Kött":
+                                        iconPath = "RecipeSearch/resources/icon_main_meat.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Fisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_fish.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Kyckling":
+                                        iconPath = "RecipeSearch/resources/icon_main_chicken.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Vegetarisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_veg.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                }
+                            } catch (NullPointerException ex) {
+                                //This should never happen in this lab but could load a default image in case of a NullPointer
+                            }
+                            ImageView iconImageView = new ImageView(icon);
+                            iconImageView.setFitHeight(12);
+                            iconImageView.setPreserveRatio(true);
+                            setGraphic(iconImageView);
+                        }
+                    }
+                };
+            }
+        };
+        mainIngredient.setButtonCell(cellFactory.call(null));
+        mainIngredient.setCellFactory(cellFactory);
+    }
+    private void populateCuisineComboBox() {
+        Callback<ListView<String>, ListCell<String>> cellFactory = new Callback<ListView<String>, ListCell<String>>() {
+
+            @Override
+            public ListCell<String> call(ListView<String> p) {
+
+                return new ListCell<String>() {
+
+                    @Override
+                    protected void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        setText(item);
+
+                        if (item == null || empty) {
+                            setGraphic(null);
+                        } else {
+                            Image icon = null;
+                            String iconPath;
+                            try {
+                                switch (item) {
+
+                                    case "Kött":
+                                        iconPath = "RecipeSearch/resources/icon_main_meat.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Fisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_fish.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Kyckling":
+                                        iconPath = "RecipeSearch/resources/icon_main_chicken.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                    case "Vegetarisk":
+                                        iconPath = "RecipeSearch/resources/icon_main_veg.png";
+                                        icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+                                        break;
+                                }
+                            } catch (NullPointerException ex) {
+                                //This should never happen in this lab but could load a default image in case of a NullPointer
+                            }
+                            ImageView iconImageView = new ImageView(icon);
+                            iconImageView.setFitHeight(12);
+                            iconImageView.setPreserveRatio(true);
+                            setGraphic(iconImageView);
+                        }
+                    }
+                };
+            }
+        };
+        couisine.setButtonCell(cellFactory.call(null));
+        couisine.setCellFactory(cellFactory);
     }
 
 }
