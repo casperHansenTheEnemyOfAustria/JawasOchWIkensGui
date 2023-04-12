@@ -1,9 +1,10 @@
 package recipesearch;
 
+import javafx.scene.image.WritableImage;
 import se.chalmers.ait.dat215.lab2.*;
 import java.util.List;
 import java.util.Arrays;
-
+import javafx.scene.image.Image;
 
 
 public class RecipeBackendController {
@@ -52,4 +53,6 @@ public class RecipeBackendController {
             RecipeBackendController.maxTime = maxTime;
         }
     }
+
+
 }

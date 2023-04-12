@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -18,10 +19,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -31,10 +28,24 @@ import javafx.stage.Stage;
 public class RecipeListitem extends AnchorPane {
     @FXML private ImageView recipeImage;
     @FXML private Text recipeTextHeadline;
+
+    @FXML private ImageView cusineImageSmall;
+
+    @FXML private ImageView mainingridientImage;
+
+    @FXML private ImageView cuisineImage;
+
+    @FXML private Text recipeDescription;
+
+    @FXML private Label time;
+
+    @FXML private Label price;
+
     private RecipeSearchController parentController;
+
     private Recipe recipe;
 
-    public RecipeListitem(Recipe recipe, RecipeSearchController recipeSearchController){
+    public RecipeListitem(Recipe recipe, RecipeSearchController recipeSearchController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recipe_listitem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -49,10 +60,19 @@ public class RecipeListitem extends AnchorPane {
         this.parentController = recipeSearchController;
         recipeImage.setImage(recipe.getFXImage());
         recipeTextHeadline.setText(recipe.getName());
-
+        cuisineImage.setImage(parentController.getCuisineImage(recipe.getCuisine()));
+        recipeDescription.setText(recipe.getDescription());
+        time.setText(String.valueOf(recipe.getTime()) + " Minuter");
+        price.setText(String.valueOf(recipe.getPrice()) + " kr");
+        
     }
+
+
     @FXML
     protected void onClick(Event event){
         parentController.openRecipeView(recipe);
     }
+
+
+
 }
