@@ -29,7 +29,7 @@ public class RecipeListitem extends AnchorPane {
     @FXML private ImageView recipeImage;
     @FXML private Text recipeTextHeadline;
 
-    @FXML private ImageView cusineImageSmall;
+    @FXML private ImageView difficulty;
 
     @FXML private ImageView mainingridientImage;
 
@@ -58,13 +58,15 @@ public class RecipeListitem extends AnchorPane {
 
         this.recipe = recipe;
         this.parentController = recipeSearchController;
-        recipeImage.setImage(recipe.getFXImage());
+        recipeImage.setImage(parentController.getSquareImage(recipe.getFXImage()));
         recipeTextHeadline.setText(recipe.getName());
         cuisineImage.setImage(parentController.getCuisineImage(recipe.getCuisine()));
         recipeDescription.setText(recipe.getDescription());
         time.setText(String.valueOf(recipe.getTime()) + " Minuter");
         price.setText(String.valueOf(recipe.getPrice()) + " kr");
-        
+        difficulty.setImage(parentController.getDifficultyImage(recipe.getDifficulty()));
+        mainingridientImage.setImage(parentController.getMainIngridientImage(recipe.getMainIngredient()));
+
     }
 
 
