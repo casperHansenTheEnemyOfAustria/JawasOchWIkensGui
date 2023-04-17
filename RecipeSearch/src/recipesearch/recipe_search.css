@@ -51,3 +51,8 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
+
+.shadow-box{
+    -fx-background-color: #000000;
+    -fx-opacity: 0.2;
+}

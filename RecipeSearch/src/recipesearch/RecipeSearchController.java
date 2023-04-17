@@ -62,6 +62,23 @@ public class RecipeSearchController implements Initializable {
     @FXML
     private Text recipeIngredients;
 
+    @FXML
+    private AnchorPane shadowBox;
+
+    @FXML
+    private ImageView cuisineImage;
+
+    @FXML
+    private ImageView difficultyImage;
+
+    @FXML
+    private ImageView mainIngridientImage;
+
+    @FXML
+    private Label timeLabel;
+
+    @FXML
+    private Label priceLabel;
     private Map<String, RecipeListitem> recipeListItemMap = new HashMap<String, RecipeListitem>();
 
 
@@ -109,11 +126,15 @@ public class RecipeSearchController implements Initializable {
     }
     @FXML
     public void closeRecipeView(){
+        shadowBox.toBack();
         searchPane.toBack();
+
     }
     public void openRecipeView(Recipe recipe){
         populateRecipeDetailView(recipe);
+        shadowBox.toFront();
         searchPane.toFront();
+
     }
 
 

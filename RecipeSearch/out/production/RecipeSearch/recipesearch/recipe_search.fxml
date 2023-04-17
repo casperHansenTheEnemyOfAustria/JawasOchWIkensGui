@@ -90,6 +90,7 @@
                   </AnchorPane>
               </items>
             </SplitPane>
+            <AnchorPane fx:id="shadowBox" onMouseClicked="#closeRecipeView" prefHeight="500.0" prefWidth="800.0" styleClass="shadow-box" />
             <AnchorPane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="743.0" style="-fx-background-color: #09babe;" translateX="-150.0" StackPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="detailedImage" fitHeight="150.0" fitWidth="166.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
