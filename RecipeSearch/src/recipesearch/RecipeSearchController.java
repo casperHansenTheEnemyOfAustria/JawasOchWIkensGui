@@ -59,6 +59,9 @@ public class RecipeSearchController implements Initializable {
     @FXML
     private Text recipeInstruction;
 
+    @FXML
+    private Text recipeIngredients;
+
     private Map<String, RecipeListitem> recipeListItemMap = new HashMap<String, RecipeListitem>();
 
 
@@ -97,6 +100,12 @@ public class RecipeSearchController implements Initializable {
         detailedImage.setImage(recipe.getFXImage());
         recipeDescription.setText(recipe.getDescription());
         recipeInstruction.setText(recipe.getInstruction());
+        System.out.println(recipe.getIngredients().size());
+        String recipeList = "";
+        for(int i = 0; i < recipe.getIngredients().size(); i++){
+            recipeList = recipeList + recipe.getIngredients().get(i).toString() + "\n";
+        }
+        recipeIngredients.setText(recipeList);
     }
     @FXML
     public void closeRecipeView(){
