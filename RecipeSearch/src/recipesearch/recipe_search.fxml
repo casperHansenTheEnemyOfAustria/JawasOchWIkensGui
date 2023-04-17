@@ -90,21 +90,23 @@
                   </AnchorPane>
               </items>
             </SplitPane>
-            <AnchorPane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="496.0" style="-fx-background-color: #09babe;" translateX="-100.0" StackPane.alignment="CENTER">
+            <AnchorPane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="743.0" style="-fx-background-color: #09babe;" translateX="-150.0" StackPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="detailedImage" fitHeight="150.0" fitWidth="166.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../recipes/coq-au-vin-2.jpg" />
                      </image>
                   </ImageView>
-                  <Label fx:id="detailedLabel" layoutX="189.0" layoutY="14.0" styleClass="text-larger" text="Title Of Food" />
-                  <Button layoutX="438.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stång">
+                  <Label fx:id="detailedLabel" layoutX="189.0" layoutY="14.0" styleClass="text-larger" text="Title Of Food" AnchorPane.topAnchor="14.0" />
+                  <Button layoutX="682.0" layoutY="13.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stång">
                      <styleClass>
                         <String fx:value="text-smaller" />
                         <String fx:value="recipe-list-item" />
                      </styleClass>
                   </Button>
-                  <Text layoutX="189.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Cockcokcokcocokcokcokcokckcokcockc kcoc kc ockck " wrappingWidth="256.234375" />
+                  <Text fx:id="recipeDescription" layoutX="189.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-smaller" text="Cockcokcokcocokcokcokcokckcokcockc kcoc kc ockck " wrappingWidth="343.43438720703125" AnchorPane.topAnchor="49.87744140625" />
+                  <Label layoutX="189.0" layoutY="119.0" styleClass="text-normal" text="Tillagning:" AnchorPane.topAnchor="119.0" />
+                  <Text fx:id="recipeInstruction" layoutX="189.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-smaller" text="The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start." wrappingWidth="544.0601806640625" AnchorPane.leftAnchor="188.26018066406255" AnchorPane.rightAnchor="10.139819335937545" AnchorPane.topAnchor="148.87744140625" />
                </children>
                <StackPane.margin>
                   <Insets left="278.0" />

@@ -53,6 +53,12 @@ public class RecipeSearchController implements Initializable {
     @FXML
     private AnchorPane searchPane;
 
+    @FXML
+    private Text recipeDescription;
+
+    @FXML
+    private Text recipeInstruction;
+
     private Map<String, RecipeListitem> recipeListItemMap = new HashMap<String, RecipeListitem>();
 
 
@@ -89,6 +95,8 @@ public class RecipeSearchController implements Initializable {
     private void populateRecipeDetailView(Recipe recipe){
         detailedLabel.setText(recipe.getName());
         detailedImage.setImage(recipe.getFXImage());
+        recipeDescription.setText(recipe.getDescription());
+        recipeInstruction.setText(recipe.getInstruction());
     }
     @FXML
     public void closeRecipeView(){
