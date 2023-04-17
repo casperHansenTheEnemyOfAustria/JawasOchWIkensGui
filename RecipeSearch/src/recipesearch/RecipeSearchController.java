@@ -123,6 +123,7 @@ public class RecipeSearchController implements Initializable {
             recipeList = recipeList + recipe.getIngredients().get(i).toString() + "\n";
         }
         recipeIngredients.setText(recipeList);
+        difficultyImage.setImage(getDifficultyImage(recipe.getDifficulty()));
     }
     @FXML
     public void closeRecipeView(){
