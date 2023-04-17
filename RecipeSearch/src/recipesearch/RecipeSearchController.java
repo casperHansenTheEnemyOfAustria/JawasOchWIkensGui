@@ -297,7 +297,7 @@ public class RecipeSearchController implements Initializable {
     public Image getMainIngridientImage(String ingridient){
         String iconPath;
         switch(ingridient) {
-            case "Biff":
+            case "Kött":
                 iconPath = "RecipeSearch/resources/icon_main_beef.png";
                 return new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
             case "Kyckling":
