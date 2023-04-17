@@ -90,18 +90,20 @@
                   </AnchorPane>
               </items>
             </SplitPane>
-            <AnchorPane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="496.0" style="-fx-background-color: #09babe;">
+            <AnchorPane fx:id="searchPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="496.0" style="-fx-background-color: #09babe;" translateX="-100.0" StackPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="detailedImage" fitHeight="150.0" fitWidth="166.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../recipes/coq-au-vin-2.jpg" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                   <Label fx:id="detailedLabel" layoutX="189.0" layoutY="14.0" styleClass="text-larger" text="Title Of Food" />
                   <Button layoutX="438.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeRecipeView" text="Stång">
                      <styleClass>
                         <String fx:value="text-smaller" />
                         <String fx:value="recipe-list-item" />
-                     </styleClass></Button>
+                     </styleClass>
+                  </Button>
                   <Text layoutX="189.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="Cockcokcokcocokcokcokcokckcokcockc kcoc kc ockck " wrappingWidth="256.234375" />
                </children>
                <StackPane.margin>

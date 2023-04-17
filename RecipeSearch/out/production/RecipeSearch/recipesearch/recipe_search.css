@@ -43,6 +43,7 @@
     -fx-border-color: #09CDDA;
     -fx-border-radius: 0px;
     -fx-background-radius: 0px;
+    -fx-cursor: hand;
 }
 
 .recipe-list-item:pressed{
