@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#onClick" prefHeight="100.0" prefWidth="495.0" stylesheets="@recipe_search.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="recipeImage" fitHeight="100.0" fitWidth="105.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="recipeTextHeadline" layoutX="104.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Label fx:id="time" layoutX="201.0" layoutY="24.0" text="0 Minutes" />
-      <Label fx:id="price" layoutX="272.0" layoutY="24.0" text="55kr" />
-      <Text fx:id="recipeDescription" layoutX="103.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LORELOROENLKDMMLKLKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" wrappingWidth="391.73675537109375" />
+      <Text fx:id="recipeTextHeadline" layoutX="104.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-larger" text="Text" />
+      <Label fx:id="time" layoutX="201.0" layoutY="24.0" styleClass="text-smaller" text="0 Minutes" />
+      <Label fx:id="price" layoutX="272.0" layoutY="24.0" styleClass="text-smaller" text="55kr" />
+      <Text fx:id="recipeDescription" layoutX="103.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-normal" text="LORELOROENLKDMMLKLKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" wrappingWidth="391.73675537109375" />
       <ImageView fx:id="mainingridientImage" fitHeight="18.0" fitWidth="22.0" layoutX="118.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="difficulty" fitHeight="18.0" fitWidth="42.0" layoutX="146.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="cuisineImage" fitHeight="18.0" fitWidth="23.0" layoutX="69.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
