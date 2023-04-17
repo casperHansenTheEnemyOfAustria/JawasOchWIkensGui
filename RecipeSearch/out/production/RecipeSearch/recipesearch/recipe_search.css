@@ -15,6 +15,11 @@
    -fx-font-family: "Comic Sans MS";
 }
 
+.text-paragraph{
+    -fx-font-size: 9px;
+   -fx-font-family: "Comic Sans MS";
+}
+
 #logo{
   -fx-font-size: 48px;
   -fx-font-family: "Impact";
