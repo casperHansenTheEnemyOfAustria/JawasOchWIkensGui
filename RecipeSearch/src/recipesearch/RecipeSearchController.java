@@ -124,6 +124,11 @@ public class RecipeSearchController implements Initializable {
         }
         recipeIngredients.setText(recipeList);
         difficultyImage.setImage(getDifficultyImage(recipe.getDifficulty()));
+        cuisineImage.setImage(getCuisineImage(recipe.getCuisine()));
+        mainIngridientImage.setImage(getSquareImage(getMainIngridientImage(recipe.getMainIngredient())));
+        timeLabel.setText(String.valueOf(recipe.getTime()) + " Minuter");
+        priceLabel.setText(String.valueOf(recipe.getPrice()) + " kr");
+
     }
     @FXML
     public void closeRecipeView(){
